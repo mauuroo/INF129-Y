@@ -98,9 +98,9 @@ umbral = int(input("Ingrese valor umbral: "))
 #Crearé una variable flag que únicamente almacenara un valor booleano que determina si el bucle continua o no:
 flag = True
 h_promedio_max = 0
-h_promedio_min = 10000000000000 #un valor muy alto para que se pueda actualizar al comparar
+h_promedio_min = 10000000000000 #Un valor muy alto para que se pueda actualizar al comparar
 
-while flag: #RECORDAR ACTUALIZAR ESTA VARIABLE DENTRO DEL PROGRAMA!
+while flag: #RECORDAR ACTUALIZAR ESTA VARIABLE DENTRO DEL BUCLE!
     invernadero = input("Ingrese estado de un invernadero: ")
     filas_s = filas_secas(invernadero, umbral) #¡PORFAVOR RECUERDEN NO LLAMAR A UNA VARIABLE CON EL MISMO NOMBRE QUE USA UNA FUNCIÓN!
 
@@ -110,7 +110,7 @@ while flag: #RECORDAR ACTUALIZAR ESTA VARIABLE DENTRO DEL PROGRAMA!
         flag = False #El bucle termina
     else:
         humedad = 0
-        n_secciones = 0 #número de secciones, útil para calcular el promedio
+        n_secciones = 0 #Número de secciones, útil para calcular el promedio
 
         for caracter in invernadero:
             if caracter != "|" and caracter != "-": #Como les mencione en clase, también es valido: if caracter not in "|-"
