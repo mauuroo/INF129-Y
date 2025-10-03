@@ -13,6 +13,7 @@ def validar(pedido):
         return True
     return False
 
+#Pregunta 2
 def costo_pedido(pedido):
     cadena = "" #La cadena que retornaremos al programa
     ingrediente = False #Verifica si me encuentro leyendo ingredientes o no
@@ -46,6 +47,31 @@ def costo_pedido(pedido):
     else:
         return "Error en el pedido"
     
-print(costo_pedido("[H][HQ]"))
-print(costo_pedido("[HHLTKMB][HQH][HCKMB][H]"))
-print(costo_pedido("HDHHALKMB]"))
+
+
+#Pregunta 3
+flag = True
+max_nombre = ""
+max_pedido = -100000
+
+while flag:
+    nombre = input("Nombre cliente: ")
+
+    if nombre == "FIN":
+        flag = False
+    else:
+        pedido = input("Ingrese pedido: ")
+        numero_sandwiches = 0
+        string_pedido = costo_pedido(pedido)
+        
+        print(string_pedido)
+
+        for caracter in string_pedido:
+            if caracter == ";": #notar que por cada ; habrá un sandiwch
+                numero_sandwiches += 1
+
+        if numero_sandwiches > max_pedido:
+            max_pedido = numero_sandwiches
+            max_nombre = nombre
+
+print(max_nombre, "pidio la mayor cantidad de hamburguesas:", max_pedido)
