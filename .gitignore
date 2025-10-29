@@ -2,3 +2,4 @@ build/
 latex/
 env/
 draft.py
+.vscode/
